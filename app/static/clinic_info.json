@@ -1,0 +1,22 @@
+{
+    "clinics": [
+      {
+        "id": "clinicA",
+        "name": "クリニックA",
+        "availableHours": [9, 10, 11, 14, 15, 16],
+        "patients": [
+          { "id": "patient1", "name": "患者A" },
+          { "id": "patient2", "name": "患者B" }
+        ]
+      },
+      {
+        "id": "clinicB",
+        "name": "クリニックB",
+        "availableHours": [10, 11, 13, 14, 16, 17, 18],
+        "patients": [
+          { "id": "patient3", "name": "患者C" },
+          { "id": "patient4", "name": "患者D" }
+        ]
+      }
+    ]
+  }

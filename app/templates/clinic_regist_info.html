@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>クリニック登録情報</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/styles.css" />
+    <script>
+      function reloadPageWithTable() {
+        const clinic_id = document.getElementById("clinic_id").value;
+        window.location.href = `?clinic_id=${clinic_id}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">クリニック登録情報</h1>
+      <div class="mb-3">
+        <label for="clinic_id">クリニック:</label>
+        <select
+          id="clinic_id"
+          name="clinic_id"
+          onchange="reloadPageWithTable()"
+        >
+          {% for clinic in all_clinics %}
+          <option value="{{ clinic.clinic_id }}">
+            {{ clinic.clinic_name }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <form
+        method="POST"
+        action="{{ url_for('clinic_regist_info') }}"
+        class="mb-4"
+      >
+        <div class="mb-3">
+          <input type="hidden" name="clinic_id" value="{{ clinic_id }}" />
+          <label for="name" class="form-label">患者名</label>
+          <input
+            type="text"
+            class="form-control"
+            id="patient_name"
+            name="patient_name"
+            required
+          />
+          <label for="patient_id_in_clinic" class="form-label">診察番号</label>
+          <input
+            type="text"
+            class="form-control"
+            id="patient_id_in_clinic"
+            name="patient_id_in_clinic"
+            required
+          />
+          <label for="password_in_clinic" class="form-label">パスワード</label>
+          <input
+            type="text"
+            class="form-control"
+            id="password_in_clinic"
+            name="password_in_clinic"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">登録</button>
+      </form>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>診察番号</th>
+            <th>パスワード</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for patient_info in patient_infos %}
+          <tr>
+            <td>{{ patient_info.patient_name }}</td>
+            <td>{{ patient_info.patient_id_in_clinic }}</td>
+            <td>{{ patient_info.password_in_clinic }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="footer-links">
+        <a href="/" class="btn">予約申請画面に戻る</a>
+      </div>
+    </div>
+  </body>
+</html>

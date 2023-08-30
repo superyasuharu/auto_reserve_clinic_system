@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "auto-reserve-clinic-system"
+version = "0.1.0"
+description = ""
+authors = ["Yasuharu Hirado <superyasuharu@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.11.2"
+pre-commit = "^3.3.3"
+mypy = "1.4.1"
+flask = "^2.3.3"
+flask-sqlalchemy = "^3.0.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

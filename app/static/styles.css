@@ -1,0 +1,95 @@
+/* 基本のリセットと設定 */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #e0f7df; /* 明るい緑の背景 */
+  color: #304030; /* 深い緑のテキストの色 */
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.8); /* 白の半透明背景 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.1); /* 緑の薄いシャドウ */
+}
+
+h1 {
+  color: #507050; /* タイトルの深い緑 */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 128, 0, 0.1); /* 緑の薄いシャドウ */
+  font-size: 16px;
+  background: rgba(255, 255, 224, 0.5); /* やや黄色の背景色 */
+  color: #304030; /* 入力テキストの色 */
+}
+
+button,
+.btn {
+  padding: 10px;
+  padding: 5px 15px;
+  background-color: #90ee90; /* 明るい緑のボタン */
+  border: none;
+  border-radius: 5px;
+  color: #304030; /* ボタンのテキストの色 */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #6b8e23; /* ホバー時のオリーブドラブ */
+}
+
+.time-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.time-group > div {
+  flex: 1;
+}
+
+/* 申請中の予約を確認するボタンのスタイルを追加 */
+button,
+#reservation-date {
+  width: 100%;
+  padding: 10px;
+}
+
+.footer-links {
+  margin-top: 20px;
+  text-align: right;
+  display: block;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+/* 既存のボタンのホバーエフェクトを変更 */
+button:hover {
+  background-color: #6b8e23;
+  transform: scale(1.05); /* ホバー時に少し大きくする */
+}

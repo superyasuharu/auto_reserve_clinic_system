@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>申請一覧</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>申請一覧</h2>
+      <table border="0">
+        <thead>
+          <tr>
+            <th>クリニック</th>
+            <th>予約患者名</th>
+            <th>予約日時</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserve_info in reserve_infos %}
+          <tr>
+            <td>{{ reserve_info.reserve_clinic }}</td>
+            <td>{{ reserve_info.patient_name }}</td>
+            <td>
+              {{ reserve_info.reserve_time.strftime('%Y年%m月%d日 %H時%M分') }}
+            </td>
+            <td>
+              <a
+                href="{{ url_for('delete', id=reserve_info.reserve_id) }}"
+                class="btn"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- <ul>
+        {% for reserve_info in reserve_infos %}
+        <li>
+          クリニック: {{ reserve_info.reserve_clinic }} <br />
+          患者名: {{ reserve_info.patient_name }} <br />
+          予約日時: {{ reserve_info.reserve_time.strftime('%Y年%m月%d日
+          %H時%M分')}}
+          <br />
+          <a
+            href="{{ url_for('delete', id=reserve_info.reserve_id) }}"
+            class="btn"
+            >Delete</a
+          >
+        </li>
+        {% endfor %}
+      </ul> -->
+      <div class="footer-links">
+        <a href="/" class="btn">予約申請画面に戻る</a>
+      </div>
+    </div>
+  </body>
+</html>

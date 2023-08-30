@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>予約システム</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>予約フォーム</h1>
+      <form action="/submit-reservation" method="post">
+        <div class="input-group">
+          <label for="clinic">クリニック選択:</label>
+          <select id="clinic" name="clinic"></select>
+        </div>
+
+        <div class="input-group">
+          <label for="patient">患者選択:</label>
+          <select id="patient" name="patient">
+            <!-- ここに患者のリストが動的に挿入される -->
+          </select>
+        </div>
+
+        <div class="input-group">
+          <div>
+            <label for="reservation-date">予約日:</label>
+            <input type="date" id="reservation-date" name="reservation-date" />
+          </div>
+        </div>
+        <div class="input-group time-group">
+          <div>
+            <label for="hours">時間:</label>
+            <select id="hours" name="hours"></select>
+          </div>
+          <div>
+            <label for="minutes">分:</label>
+            <select id="minutes" name="minutes"></select>
+          </div>
+        </div>
+
+        <button type="submit">予約する</button>
+      </form>
+      <div class="footer-links">
+        <a href="/view_applications" class="btn">申請中の予約を確認する</a>
+        <a href="/clinic_regist_info" class="btn"
+          >クリニックの患者情報を確認する</a
+        >
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+  </body>
+</html>
