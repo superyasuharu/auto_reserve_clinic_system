@@ -1,0 +1,20 @@
+{
+    "python.analysis.extraPaths": [
+        "."
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "mypy-type-checker.args": [
+        "--strict"
+    ],
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "isort.check": true,
+    "flake8.importStrategy": "fromEnvironment",
+}
