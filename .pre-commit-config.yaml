@@ -32,20 +32,20 @@ repos:
   - id: black
     language_version: python3
 
-# - repo: https://github.com/pre-commit/mirrors-mypy
-#   rev: v1.5.1
-#   hooks:
-#     - id: mypy
-#       args: [--strict, --ignore-missing-imports]
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.5.1
+  hooks:
+    - id: mypy
+      args: [--strict, --ignore-missing-imports]
 
-# - repo: https://github.com/pycqa/flake8
-#   rev: 6.1.0
-#   hooks:
-#   - id: flake8
-#     # max-line-length setting is the same as black
-#     # commit cannot be done when cyclomatic complexity is more than 10.
-#     args: [--max-line-length, "88", --ignore=E402, --max-complexity, "10", --max-expression-complexity=7, --max-cognitive-complexity=7]
-#     additional_dependencies: [flake8-bugbear, flake8-builtins, flake8-eradicate, pep8-naming, flake8-expression-complexity, flake8-cognitive-complexity]
+- repo: https://github.com/pycqa/flake8
+  rev: 6.1.0
+  hooks:
+  - id: flake8
+    # max-line-length setting is the same as black
+    # commit cannot be done when cyclomatic complexity is more than 10.
+    args: [--max-line-length, "88", --ignore=E402, --max-complexity, "10", --max-expression-complexity=7, --max-cognitive-complexity=7]
+    additional_dependencies: [flake8-bugbear, flake8-builtins, flake8-eradicate, pep8-naming, flake8-expression-complexity, flake8-cognitive-complexity]
 
 # - repo: https://github.com/markdownlint/markdownlint
 #   rev: v0.12.0
